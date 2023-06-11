@@ -1,0 +1,83 @@
+body {
+    text-align: center;
+    background-color: rgb(221, 195, 255);
+    font-family:"Trebuchet MS";
+}
+
+.names {
+    color: rgb(58, 61, 243);
+    font-size: 40px;
+}
+
+a:link, a:visited {
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+a:hover, a:active {
+    color:rgb(205, 207, 184);
+}
+
+.header {
+    font-size: 72px;
+    text-decoration: underline;
+    color: darkslateblue;
+}
+
+.tallybar {
+    background: transparent;
+    text-align: center;
+    width: 120px;
+    border: none;
+    color: black;
+    font-size: 50px;
+    margin-left: 9%;
+    margin-right: 9%;
+    margin-bottom: 50px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#reset {
+    color: white;
+    background-color: grey;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-top: 50px;
+    height: 75px;
+    width: 20%;
+    min-width: 10%;
+    max-width: 30%;
+}
+
+.mehakButton {
+    color: white;
+    background-color: cornflowerblue;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-top: 15px;
+    height: 100px;
+    width: 25%;
+    min-width: 10%;
+    max-width: 30%;
+}
+
+.cheyButton {
+    color: white;
+    background-color: crimson;
+    font-size: 30px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-left: 5%;
+    height: 100px;
+    width: 25%;
+    min-width: 10%;
+    max-width: 30%;
+}

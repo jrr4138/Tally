@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tally</title>
+    <link rel="stylesheet" href="index.css"/>
+    <link rel="ICON" href="../favicon.ico" type="image/ico"/>
+</head>
+
+<body>
+    <h1 class="header">Tally</h1>
+    <p class="names">Mehak&emsp;&emsp;&emsp;&emsp;OR&emsp;&emsp;&emsp;Cheyenne</p>
+
+    <div id="nums">
+        <input class="tallybar" type="text" id="mehakTally" onchange='saveValue(this)' disabled value="0">
+        <input class="tallybar" type="text" id="cheyTally" onchange='saveValue(this)' disabled value="0">
+    </div>
+    
+
+    <div>
+        <button class="mehakButton" type="button" onClick="mehakUp()">+1</button>
+        <button class="cheyButton" type="button" onClick="cheyUp()">+1</button>
+    </div>
+    <div>
+        <button class="mehakButton" type="button" onClick="mehakDown()">-1</button>
+        <button class="cheyButton" type="button" onClick="cheyDown()">-1</button>
+    </div>
+    <button id="reset" type="button" onClick="reset()">Reset</button>
+</body>
+
+<script>
+    
+    // simple script that changes website title when switch to another tab
+    let docTitle = document.title;
+    window.addEventListener('blur', () => {
+        document.title = "Come Back :(";
+    });
+    window.addEventListener('focus', () => {
+        document.title = docTitle;
+    });
+
+    //Save the value function - save it to localStorage as (ID, VALUE)
+    // function saveValue(e){
+    //     var id = e.id;  // get the sender's id to save it . 
+    //     var val = e.value; // get the value. 
+    //     localStorage.setItem(id, val);// Every time user writing something, the localStorage's value will override . 
+    // }
+
+    //get the saved value function - return the value of "v" from localStorage. 
+    function getSavedValue  (v){
+        if (!localStorage.getItem(v)) {
+            return 0; // You can change this to your default value. 
+        }
+        return localStorage.getItem(v);
+    }
+
+    document.getElementById("mehakTally").value = getSavedValue("mehak");
+    document.getElementById("cheyTally").value = getSavedValue("chey");
+
+
+    function mehakUp() {
+        document.getElementById("mehakTally").value++;
+        localStorage.setItem("mehak", document.getElementById("mehakTally").value);
+    }
+    function mehakDown() {
+        if(document.getElementById('mehakTally').value > 0){
+            document.getElementById('mehakTally').value--;
+            localStorage.setItem("mehak", document.getElementById("mehakTally").value);
+        }
+    }
+    function cheyUp() {
+        document.getElementById('cheyTally').value++;
+        localStorage.setItem("chey", document.getElementById("cheyTally").value);
+    }
+    function cheyDown() {
+        if(document.getElementById('cheyTally').value > 0){
+            document.getElementById('cheyTally').value--;
+            localStorage.setItem("chey", document.getElementById("cheyTally").value);
+        }
+    }
+
+    function reset() {
+        document.getElementById('mehakTally').value = 0;
+        document.getElementById('cheyTally').value = 0;
+        localStorage.setItem("mehak", 0);
+        localStorage.setItem("chey", 0);
+    }
+
+</script>
+ 
+</html>
